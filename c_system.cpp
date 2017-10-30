@@ -1,9 +1,7 @@
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <time.h>
-using namespace std;
+#include "c_system.hpp"
+//using namespace std;
 string askName(){
+    cout << "Say my name:" << endl;
     string a;
     cin >> a;
     return a;
@@ -99,11 +97,12 @@ int character::getDef(){
 void character::printStat(){
     cout << this->getHp() << endl << this->getMp() << endl << this->getAtt() << endl << this->getDef() << endl;
 }
+/*
 int main(){
     character teste("teste");
     teste.printStat();
     return 0;
 }
-
+*/
 
 
