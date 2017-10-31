@@ -6,32 +6,13 @@ string askName(){
     cin >> a;
     return a;
 }
-class character{
-    private:
-    std::string name;
-    
-    int job, hp, mp, att,def;
-    public:
-    character();
-    character(string);
-    character(string, int, int, int, int, int);
-    void setName(string);
-    void setJob(int);
-    void setHp(int);
-    void setMp(int);
-    void setAtt(int);
-    void setDef(int);
-    void setInit();
-    int getHp();
-    int getMp();
-    int getAtt();
-    int getDef();
-    void printStat();
-    
-};
+
 character::character(){
     this->setName(askName());
     this->setInit();
+}
+character::character(int a){
+    
 }
 character::character(string n){
     this->setName(n);
@@ -77,11 +58,17 @@ void character::setInit(){
     x = 10+(rand()%6);
     this->setAtt(x);
     this->setDef(25-x);
-    
+    this->setJob(1);
 }
 
 //*********************************
 //code the gets
+string character::getName(){
+    return this->name;
+}
+int character::getJob(){
+    return this->job;
+}
 int character::getHp(){
     return this->hp;
 }
@@ -95,7 +82,7 @@ int character::getDef(){
     return this->def;
 }
 void character::printStat(){
-    cout << this->getHp() << endl << this->getMp() << endl << this->getAtt() << endl << this->getDef() << endl;
+    cout << this-> getName() << endl << this->getHp() << endl << this->getMp() << endl << this->getAtt() << endl << this->getDef() << endl;
 }
 /*
 int main(){
