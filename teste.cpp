@@ -1,4 +1,4 @@
-#include "f_system.hpp"
+#include "battle.hpp"
 
 /*
 #include <string>
@@ -7,6 +7,7 @@
 int main(){
     cout << "00" << endl;
     character char1("Lan");
+    //char1.printStat();
     cout << "01" << endl;
     Persona per1(char1);
     cout << "02" << endl;

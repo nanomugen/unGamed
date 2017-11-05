@@ -12,7 +12,7 @@ character::character(){
     this->setInit();
 }
 character::character(int a){
-    
+    //cout << "estou no construtor com inteiro de character\n";
 }
 character::character(string n){
     this->setName(n);
@@ -32,6 +32,9 @@ character::character(string n,int j,int h,int m,int a,int d){
 
 void character::setName(string n){
     this->name = n;
+}
+void character::setId(int i){
+    this->id=i;
 }
 void character::setJob(int j){
     this->job = j;
@@ -65,6 +68,9 @@ void character::setInit(){
 //code the gets
 string character::getName(){
     return this->name;
+}
+int character::getId(){
+    return this->id;
 }
 int character::getJob(){
     return this->job;
