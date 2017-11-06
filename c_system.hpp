@@ -7,16 +7,18 @@
 //#include <string>
 using namespace std;
 string askName();
-class character{
+class Character{
+    
     private:
     string name;
     
     int id,job, hp, mp, att,def;
     public:
-    character();
-    character(int);
-    character(string);
-    character(string, int, int, int, int, int);
+    static bool id_alloc[20];
+    Character();
+    Character(int);
+    Character(string);
+    Character(string, int, int, int, int, int);
     void setName(string);
     void setId(int);
     void setJob(int);
@@ -33,7 +35,7 @@ class character{
     int getAtt();
     int getDef();
     void printStat();
-    
+    int avaliableId();
 };
-//class Persona:character;
+//class Persona:Character;
 //#include <iostream>

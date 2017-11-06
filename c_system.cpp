@@ -1,57 +1,58 @@
 #include "c_system.hpp"
-//using namespace std;
+#define ALLOC_SIZE 20
 string askName(){
     cout << "Say my name:" << endl;
     string a;
     cin >> a;
     return a;
 }
-
-character::character(){
+bool Character::id_alloc[ALLOC_SIZE];
+Character::Character(){
     this->setName(askName());
     this->setInit();
 }
-character::character(int a){
-    //cout << "estou no construtor com inteiro de character\n";
+Character::Character(int a){
+    //cout << "estou no construtor com inteiro de Character\n";
 }
-character::character(string n){
+Character::Character(string n){
     this->setName(n);
     this->setJob(1);
     this->setInit();
+    this->setId(avaliableId());
 }
-character::character(string n,int j,int h,int m,int a,int d){
+Character::Character(string n,int j,int h,int m,int a,int d){
     this->setName(n);
     this->setJob(j);
     this->setHp(h);
     this->setMp(m);
     this->setAtt(a);
     this->setDef(d);
-    
+    this->setId(avaliableId());
 }
 
 
-void character::setName(string n){
+void Character::setName(string n){
     this->name = n;
 }
-void character::setId(int i){
+void Character::setId(int i){
     this->id=i;
 }
-void character::setJob(int j){
+void Character::setJob(int j){
     this->job = j;
 }
-void character::setHp(int h){
+void Character::setHp(int h){
     this->hp = h;
 }
-void character::setMp(int m){
+void Character::setMp(int m){
     this->mp = m;
 }
-void character::setAtt(int a){
+void Character::setAtt(int a){
     this->att = a;
 }
-void character::setDef(int d){
+void Character::setDef(int d){
     this->def = d;
 }
-void character::setInit(){
+void Character::setInit(){
     srand( (unsigned)time(NULL) );
     int x = 10+(rand()%6);
     this->setHp(x);
@@ -66,36 +67,43 @@ void character::setInit(){
 
 //*********************************
 //code the gets
-string character::getName(){
+string Character::getName(){
     return this->name;
 }
-int character::getId(){
+int Character::getId(){
     return this->id;
 }
-int character::getJob(){
+int Character::getJob(){
     return this->job;
 }
-int character::getHp(){
+int Character::getHp(){
     return this->hp;
 }
-int character::getMp(){
+int Character::getMp(){
     return this->mp;
 }
-int character::getAtt(){
+int Character::getAtt(){
     return this->att;        
 }
-int character::getDef(){
+int Character::getDef(){
     return this->def;
 }
-void character::printStat(){
+void Character::printStat(){
     cout << this-> getName() << endl << this->getHp() << endl << this->getMp() << endl << this->getAtt() << endl << this->getDef() << endl;
 }
-/*
-int main(){
-    character teste("teste");
-    teste.printStat();
-    return 0;
+int Character::avaliableId(){
+    int i =0;
+    while(Character::id_alloc[i] && i<=19){
+        i++;
+    }
+    if(i>19){
+        cout << "não há mais espaço para novos chars\n";
+        return -1;
+    }
+    else{
+        Character::id_alloc[i]=true;
+        return i;
+    }
 }
-*/
 
 

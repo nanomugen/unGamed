@@ -11,14 +11,16 @@ class Point{
     int getX();
     int getY();
     int range(Point);
+    
 };
-class Persona: public character{
+class Persona: public Character{
     private:
     Point pos;
     public:
-    Persona(character);
+    Persona(Character);
     Persona();
     void setPos(Point);
     Point getPos();
+    void attack(Persona);
     //void setAll;
 };

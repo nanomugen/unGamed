@@ -27,10 +27,10 @@ int Point::range(Point other){
     int b = abs(other.x - this->x);
     int c = (int) sqrt(pow(a,2)+pow(b,2));
 }
-Persona::Persona(){
+Persona::Persona():Character(1){
     
 }
-Persona::Persona(character c):character(1){
+Persona::Persona(Character c):Character(1){
     //cout << "comecei aqui a setar\n";
     this->setName(c.getName());
     //this->setName("loki");
@@ -48,4 +48,11 @@ void Persona::setPos(Point p){
 }
 Point Persona::getPos(){
     return this->pos;
+}
+void Persona::attack(Persona other){
+    srand( (unsigned)time(NULL) );
+    //******************************************
+    //terminar aqui
+    int damage = (int)(this->getAtt()*((rand()%10)+91)/(float)100)-(int)(other.getAtt()*((rand()%10)+91)/(float)100);
+    cout << damage << endl;
 }
