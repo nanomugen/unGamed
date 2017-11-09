@@ -11,7 +11,7 @@ Battle::Battle(Persona lista[]){
             cout << "Chave:\t" << j << endl;
             j++;
         }
-        cout << "to aqui fora\n";
+        //cout << "to aqui fora\n";
         //este abaixo é o metodo que mostra todos personas possiveis, por hora não utilizado
         /*
         for(int j=0;j<ALLOC_SIZE;j++){
@@ -76,7 +76,7 @@ void Battle::blood(int cont){
         
         if(op=='a'||op=='A'){
             if(stAtt){
-                int j=0;
+                int j=1;
                 bool ver=true;
                 op='n';
                 while(ver){
@@ -98,6 +98,9 @@ void Battle::blood(int cont){
             }
             else
                 cout << "não há ataque disponivel.\n";
+        }
+        if(op=='q'||op=='Q'){
+            stOp=false;
         }
         if(!stMv && !stAtt)
             stOp=false;
