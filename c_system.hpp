@@ -36,6 +36,7 @@ class Character{
     int getDef();
     void printStat();
     int avaliableId();
+    
 };
 //class Persona:Character;
 //#include <iostream>

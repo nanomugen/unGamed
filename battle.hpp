@@ -5,6 +5,8 @@ class Battle{
     private:
     int field[SIZE_TAB][SIZE_TAB];
     Persona *members;
+    //Persona champion;
+    string champion;
     public:
     //talvez mudar aqui para character e depois transformar em persona
     //ja era, só criei o construtor vazio de persona
@@ -13,6 +15,8 @@ class Battle{
     Persona getMembers(int);
     void setStart();
     void blood(int);
-    
-    
+    bool end();
+    string getChampion();
+    void setChampion(string);
+    void op(Persona*);
 };

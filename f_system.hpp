@@ -10,17 +10,26 @@ class Point{
     void setY(int);
     int getX();
     int getY();
-    int range(Point);
+    int range(Point*);
+    void add(Point*);
+    void print();
+    void setP(int,int);
     
 };
 class Persona: public Character{
     private:
-    Point pos;
+    Point* pos;
+    int hpb,mpb;
     public:
     Persona(Character);
     Persona();
-    void setPos(Point);
-    Point getPos();
-    void attack(Persona);
+    void setPos(Point*);
+    Point* getPos();
+    void setHpb(int);
+    void setMpb(int);
+    int getHpb();
+    int getMpb();
+    void attack(Persona*);
+    void move();
     //void setAll;
 };

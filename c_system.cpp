@@ -53,10 +53,10 @@ void Character::setDef(int d){
     this->def = d;
 }
 void Character::setInit(){
-    srand( (unsigned)time(NULL) );
-    int x = 10+(rand()%6);
+    //srand( (unsigned)time(NULL) );
+    int x = 100+(rand()%21);
     this->setHp(x);
-    this->setMp(25-x);
+    this->setMp(220-x);
     //srand(1);
     //srand( (unsigned)time(NULL) );
     x = 10+(rand()%6);
@@ -105,5 +105,6 @@ int Character::avaliableId(){
         return i;
     }
 }
+
 
 
